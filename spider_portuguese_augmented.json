@@ -1,0 +1,1050 @@
+[
+  {
+    "db_id": "concert_singer",
+    "query": "SELECT count(*) FROM singer",
+    "question": "Quantos cantores existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "singer"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "singer"],
+    "question_toks": ["Quantos", "cantores", "existem", "?"]
+  },
+  {
+    "db_id": "concert_singer",
+    "query": "SELECT name, country FROM singer ORDER BY age DESC",
+    "question": "Quais são os nomes e países dos cantores ordenados por idade de forma decrescente?",
+    "query_toks": ["SELECT", "name", ",", "country", "FROM", "singer", "ORDER", "BY", "age", "DESC"],
+    "query_toks_no_value": ["SELECT", "name", ",", "country", "FROM", "singer", "ORDER", "BY", "age", "DESC"],
+    "question_toks": ["Quais", "são", "os", "nomes", "e", "países", "dos", "cantores", "ordenados", "por", "idade", "de", "forma", "decrescente", "?"]
+  },
+  {
+    "db_id": "concert_singer",
+    "query": "SELECT avg(age), min(age), max(age) FROM singer WHERE country = 'France'",
+    "question": "Qual é a média, mínimo e máximo de idade dos cantores da França?",
+    "query_toks": ["SELECT", "avg", "(", "age", ")", ",", "min", "(", "age", ")", ",", "max", "(", "age", ")", "FROM", "singer", "WHERE", "country", "=", "'France'"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "age", ")", ",", "min", "(", "age", ")", ",", "max", "(", "age", ")", "FROM", "singer", "WHERE", "country", "=", "value"],
+    "question_toks": ["Qual", "é", "a", "média", ",", "mínimo", "e", "máximo", "de", "idade", "dos", "cantores", "da", "França", "?"]
+  },
+  {
+    "db_id": "concert_singer",
+    "query": "SELECT DISTINCT country FROM singer WHERE age > 20",
+    "question": "Quais são os países distintos dos cantores com mais de 20 anos?",
+    "query_toks": ["SELECT", "DISTINCT", "country", "FROM", "singer", "WHERE", "age", ">", "20"],
+    "query_toks_no_value": ["SELECT", "DISTINCT", "country", "FROM", "singer", "WHERE", "age", ">", "value"],
+    "question_toks": ["Quais", "são", "os", "países", "distintos", "dos", "cantores", "com", "mais", "de", "20", "anos", "?"]
+  },
+  {
+    "db_id": "concert_singer",
+    "query": "SELECT name FROM singer WHERE age = (SELECT max(age) FROM singer)",
+    "question": "Qual é o nome do cantor mais velho?",
+    "query_toks": ["SELECT", "name", "FROM", "singer", "WHERE", "age", "=", "(", "SELECT", "max", "(", "age", ")", "FROM", "singer", ")"],
+    "query_toks_no_value": ["SELECT", "name", "FROM", "singer", "WHERE", "age", "=", "(", "SELECT", "max", "(", "age", ")", "FROM", "singer", ")"],
+    "question_toks": ["Qual", "é", "o", "nome", "do", "cantor", "mais", "velho", "?"]
+  },
+  {
+    "db_id": "concert_singer",
+    "query": "SELECT T2.concert_name, T2.theme, count(*) FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id = T2.concert_id GROUP BY T2.concert_id",
+    "question": "Qual é o nome, tema e número de cantores em cada concerto?",
+    "query_toks": ["SELECT", "T2.concert_name", ",", "T2.theme", ",", "count", "(", "*", ")", "FROM", "singer_in_concert", "AS", "T1", "JOIN", "concert", "AS", "T2", "ON", "T1.concert_id", "=", "T2.concert_id", "GROUP", "BY", "T2.concert_id"],
+    "query_toks_no_value": ["SELECT", "T2.concert_name", ",", "T2.theme", ",", "count", "(", "*", ")", "FROM", "singer_in_concert", "AS", "T1", "JOIN", "concert", "AS", "T2", "ON", "T1.concert_id", "=", "T2.concert_id", "GROUP", "BY", "T2.concert_id"],
+    "question_toks": ["Qual", "é", "o", "nome", ",", "tema", "e", "número", "de", "cantores", "em", "cada", "concerto", "?"]
+  },
+  {
+    "db_id": "concert_singer",
+    "query": "SELECT T1.name FROM singer AS T1 JOIN singer_in_concert AS T2 ON T1.singer_id = T2.singer_id JOIN concert AS T3 ON T2.concert_id = T3.concert_id WHERE T3.year = 2014",
+    "question": "Quais cantores participaram de concertos em 2014?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "singer", "AS", "T1", "JOIN", "singer_in_concert", "AS", "T2", "ON", "T1.singer_id", "=", "T2.singer_id", "JOIN", "concert", "AS", "T3", "ON", "T2.concert_id", "=", "T3.concert_id", "WHERE", "T3.year", "=", "2014"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "singer", "AS", "T1", "JOIN", "singer_in_concert", "AS", "T2", "ON", "T1.singer_id", "=", "T2.singer_id", "JOIN", "concert", "AS", "T3", "ON", "T2.concert_id", "=", "T3.concert_id", "WHERE", "T3.year", "=", "value"],
+    "question_toks": ["Quais", "cantores", "participaram", "de", "concertos", "em", "2014", "?"]
+  },
+  {
+    "db_id": "pets_1",
+    "query": "SELECT count(*) FROM pets WHERE weight > 10",
+    "question": "Quantos animais de estimação têm peso maior que 10?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "pets", "WHERE", "weight", ">", "10"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "pets", "WHERE", "weight", ">", "value"],
+    "question_toks": ["Quantos", "animais", "de", "estimação", "têm", "peso", "maior", "que", "10", "?"]
+  },
+  {
+    "db_id": "pets_1",
+    "query": "SELECT DISTINCT pet_type FROM pets",
+    "question": "Quais são os tipos de animais de estimação existentes?",
+    "query_toks": ["SELECT", "DISTINCT", "pet_type", "FROM", "pets"],
+    "query_toks_no_value": ["SELECT", "DISTINCT", "pet_type", "FROM", "pets"],
+    "question_toks": ["Quais", "são", "os", "tipos", "de", "animais", "de", "estimação", "existentes", "?"]
+  },
+  {
+    "db_id": "pets_1",
+    "query": "SELECT T1.fname, T1.age FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid = T2.stuid JOIN pets AS T3 ON T3.petid = T2.petid WHERE T3.pet_type = 'cat'",
+    "question": "Quais são os nomes e idades dos estudantes que têm gatos?",
+    "query_toks": ["SELECT", "T1.fname", ",", "T1.age", "FROM", "student", "AS", "T1", "JOIN", "has_pet", "AS", "T2", "ON", "T1.stuid", "=", "T2.stuid", "JOIN", "pets", "AS", "T3", "ON", "T3.petid", "=", "T2.petid", "WHERE", "T3.pet_type", "=", "'cat'"],
+    "query_toks_no_value": ["SELECT", "T1.fname", ",", "T1.age", "FROM", "student", "AS", "T1", "JOIN", "has_pet", "AS", "T2", "ON", "T1.stuid", "=", "T2.stuid", "JOIN", "pets", "AS", "T3", "ON", "T3.petid", "=", "T2.petid", "WHERE", "T3.pet_type", "=", "value"],
+    "question_toks": ["Quais", "são", "os", "nomes", "e", "idades", "dos", "estudantes", "que", "têm", "gatos", "?"]
+  },
+  {
+    "db_id": "pets_1",
+    "query": "SELECT fname FROM student WHERE stuid NOT IN (SELECT stuid FROM has_pet)",
+    "question": "Quais estudantes não têm animais de estimação?",
+    "query_toks": ["SELECT", "fname", "FROM", "student", "WHERE", "stuid", "NOT", "IN", "(", "SELECT", "stuid", "FROM", "has_pet", ")"],
+    "query_toks_no_value": ["SELECT", "fname", "FROM", "student", "WHERE", "stuid", "NOT", "IN", "(", "SELECT", "stuid", "FROM", "has_pet", ")"],
+    "question_toks": ["Quais", "estudantes", "não", "têm", "animais", "de", "estimação", "?"]
+  },
+  {
+    "db_id": "pets_1",
+    "query": "SELECT max(weight), min(weight) FROM pets WHERE pet_type = 'dog'",
+    "question": "Qual é o peso máximo e mínimo dos cães?",
+    "query_toks": ["SELECT", "max", "(", "weight", ")", ",", "min", "(", "weight", ")", "FROM", "pets", "WHERE", "pet_type", "=", "'dog'"],
+    "query_toks_no_value": ["SELECT", "max", "(", "weight", ")", ",", "min", "(", "weight", ")", "FROM", "pets", "WHERE", "pet_type", "=", "value"],
+    "question_toks": ["Qual", "é", "o", "peso", "máximo", "e", "mínimo", "dos", "cães", "?"]
+  },
+  {
+    "db_id": "car_1",
+    "query": "SELECT count(*) FROM cars_data WHERE horsepower > 150",
+    "question": "Quantos carros têm mais de 150 cavalos de potência?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "cars_data", "WHERE", "horsepower", ">", "150"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "cars_data", "WHERE", "horsepower", ">", "value"],
+    "question_toks": ["Quantos", "carros", "têm", "mais", "de", "150", "cavalos", "de", "potência", "?"]
+  },
+  {
+    "db_id": "car_1",
+    "query": "SELECT T1.make FROM car_names AS T1 JOIN cars_data AS T2 ON T1.makeid = T2.id WHERE T2.mpg = (SELECT max(mpg) FROM cars_data)",
+    "question": "Qual é a marca do carro com maior eficiência de combustível?",
+    "query_toks": ["SELECT", "T1.make", "FROM", "car_names", "AS", "T1", "JOIN", "cars_data", "AS", "T2", "ON", "T1.makeid", "=", "T2.id", "WHERE", "T2.mpg", "=", "(", "SELECT", "max", "(", "mpg", ")", "FROM", "cars_data", ")"],
+    "query_toks_no_value": ["SELECT", "T1.make", "FROM", "car_names", "AS", "T1", "JOIN", "cars_data", "AS", "T2", "ON", "T1.makeid", "=", "T2.id", "WHERE", "T2.mpg", "=", "(", "SELECT", "max", "(", "mpg", ")", "FROM", "cars_data", ")"],
+    "question_toks": ["Qual", "é", "a", "marca", "do", "carro", "com", "maior", "eficiência", "de", "combustível", "?"]
+  },
+  {
+    "db_id": "car_1",
+    "query": "SELECT avg(mpg), avg(horsepower) FROM cars_data WHERE cylinders = 4",
+    "question": "Qual é a média de mpg e potência dos carros com 4 cilindros?",
+    "query_toks": ["SELECT", "avg", "(", "mpg", ")", ",", "avg", "(", "horsepower", ")", "FROM", "cars_data", "WHERE", "cylinders", "=", "4"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "mpg", ")", ",", "avg", "(", "horsepower", ")", "FROM", "cars_data", "WHERE", "cylinders", "=", "value"],
+    "question_toks": ["Qual", "é", "a", "média", "de", "mpg", "e", "potência", "dos", "carros", "com", "4", "cilindros", "?"]
+  },
+  {
+    "db_id": "car_1",
+    "query": "SELECT DISTINCT T1.model FROM model_list AS T1 JOIN car_makers AS T2 ON T1.maker = T2.id WHERE T2.country = 'usa'",
+    "question": "Quais são os modelos de carros fabricados nos EUA?",
+    "query_toks": ["SELECT", "DISTINCT", "T1.model", "FROM", "model_list", "AS", "T1", "JOIN", "car_makers", "AS", "T2", "ON", "T1.maker", "=", "T2.id", "WHERE", "T2.country", "=", "'usa'"],
+    "query_toks_no_value": ["SELECT", "DISTINCT", "T1.model", "FROM", "model_list", "AS", "T1", "JOIN", "car_makers", "AS", "T2", "ON", "T1.maker", "=", "T2.id", "WHERE", "T2.country", "=", "value"],
+    "question_toks": ["Quais", "são", "os", "modelos", "de", "carros", "fabricados", "nos", "EUA", "?"]
+  },
+  {
+    "db_id": "car_1",
+    "query": "SELECT cylinders, count(*) FROM cars_data GROUP BY cylinders ORDER BY count(*) DESC",
+    "question": "Quantos carros existem para cada número de cilindros, em ordem decrescente?",
+    "query_toks": ["SELECT", "cylinders", ",", "count", "(", "*", ")", "FROM", "cars_data", "GROUP", "BY", "cylinders", "ORDER", "BY", "count", "(", "*", ")", "DESC"],
+    "query_toks_no_value": ["SELECT", "cylinders", ",", "count", "(", "*", ")", "FROM", "cars_data", "GROUP", "BY", "cylinders", "ORDER", "BY", "count", "(", "*", ")", "DESC"],
+    "question_toks": ["Quantos", "carros", "existem", "para", "cada", "número", "de", "cilindros", ",", "em", "ordem", "decrescente", "?"]
+  },
+  {
+    "db_id": "flight_2",
+    "query": "SELECT count(*) FROM airlines",
+    "question": "Quantas companhias aéreas existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "airlines"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "airlines"],
+    "question_toks": ["Quantas", "companhias", "aéreas", "existem", "?"]
+  },
+  {
+    "db_id": "flight_2",
+    "query": "SELECT T1.name FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.airline WHERE T2.destairport = 'AHD'",
+    "question": "Quais companhias aéreas têm voos com destino ao aeroporto AHD?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "airlines", "AS", "T1", "JOIN", "flights", "AS", "T2", "ON", "T1.uid", "=", "T2.airline", "WHERE", "T2.destairport", "=", "'AHD'"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "airlines", "AS", "T1", "JOIN", "flights", "AS", "T2", "ON", "T1.uid", "=", "T2.airline", "WHERE", "T2.destairport", "=", "value"],
+    "question_toks": ["Quais", "companhias", "aéreas", "têm", "voos", "com", "destino", "ao", "aeroporto", "AHD", "?"]
+  },
+  {
+    "db_id": "flight_2",
+    "query": "SELECT T2.city, count(*) FROM flights AS T1 JOIN airports AS T2 ON T1.destairport = T2.airportcode GROUP BY T1.destairport ORDER BY count(*) DESC LIMIT 5",
+    "question": "Quais são as 5 cidades de destino mais populares em número de voos?",
+    "query_toks": ["SELECT", "T2.city", ",", "count", "(", "*", ")", "FROM", "flights", "AS", "T1", "JOIN", "airports", "AS", "T2", "ON", "T1.destairport", "=", "T2.airportcode", "GROUP", "BY", "T1.destairport", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "T2.city", ",", "count", "(", "*", ")", "FROM", "flights", "AS", "T1", "JOIN", "airports", "AS", "T2", "ON", "T1.destairport", "=", "T2.airportcode", "GROUP", "BY", "T1.destairport", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "as", "5", "cidades", "de", "destino", "mais", "populares", "em", "número", "de", "voos", "?"]
+  },
+  {
+    "db_id": "flight_2",
+    "query": "SELECT DISTINCT T1.name FROM airlines AS T1 JOIN flights AS T2 ON T1.uid = T2.airline WHERE T2.sourceairport = 'APG' AND T2.destairport = 'CVO'",
+    "question": "Quais companhias aéreas operam voos de APG para CVO?",
+    "query_toks": ["SELECT", "DISTINCT", "T1.name", "FROM", "airlines", "AS", "T1", "JOIN", "flights", "AS", "T2", "ON", "T1.uid", "=", "T2.airline", "WHERE", "T2.sourceairport", "=", "'APG'", "AND", "T2.destairport", "=", "'CVO'"],
+    "query_toks_no_value": ["SELECT", "DISTINCT", "T1.name", "FROM", "airlines", "AS", "T1", "JOIN", "flights", "AS", "T2", "ON", "T1.uid", "=", "T2.airline", "WHERE", "T2.sourceairport", "=", "value", "AND", "T2.destairport", "=", "value"],
+    "question_toks": ["Quais", "companhias", "aéreas", "operam", "voos", "de", "APG", "para", "CVO", "?"]
+  },
+  {
+    "db_id": "employee_hire_evaluation",
+    "query": "SELECT count(*) FROM employee",
+    "question": "Quantos funcionários existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "employee"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "employee"],
+    "question_toks": ["Quantos", "funcionários", "existem", "?"]
+  },
+  {
+    "db_id": "employee_hire_evaluation",
+    "query": "SELECT name, city FROM employee ORDER BY age",
+    "question": "Quais são os nomes e cidades dos funcionários ordenados por idade?",
+    "query_toks": ["SELECT", "name", ",", "city", "FROM", "employee", "ORDER", "BY", "age"],
+    "query_toks_no_value": ["SELECT", "name", ",", "city", "FROM", "employee", "ORDER", "BY", "age"],
+    "question_toks": ["Quais", "são", "os", "nomes", "e", "cidades", "dos", "funcionários", "ordenados", "por", "idade", "?"]
+  },
+  {
+    "db_id": "employee_hire_evaluation",
+    "query": "SELECT T1.name FROM employee AS T1 JOIN hiring AS T2 ON T1.employee_id = T2.employee_id JOIN shop AS T3 ON T2.shop_id = T3.shop_id WHERE T3.name = 'Pear'",
+    "question": "Quais funcionários trabalham na loja chamada Pear?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "employee", "AS", "T1", "JOIN", "hiring", "AS", "T2", "ON", "T1.employee_id", "=", "T2.employee_id", "JOIN", "shop", "AS", "T3", "ON", "T2.shop_id", "=", "T3.shop_id", "WHERE", "T3.name", "=", "'Pear'"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "employee", "AS", "T1", "JOIN", "hiring", "AS", "T2", "ON", "T1.employee_id", "=", "T2.employee_id", "JOIN", "shop", "AS", "T3", "ON", "T2.shop_id", "=", "T3.shop_id", "WHERE", "T3.name", "=", "value"],
+    "question_toks": ["Quais", "funcionários", "trabalham", "na", "loja", "chamada", "Pear", "?"]
+  },
+  {
+    "db_id": "employee_hire_evaluation",
+    "query": "SELECT T2.name, sum(T1.num_of_employee) FROM shop AS T1 JOIN district AS T2 ON T1.district_id = T2.district_id GROUP BY T2.district_id",
+    "question": "Qual é o total de funcionários por distrito?",
+    "query_toks": ["SELECT", "T2.name", ",", "sum", "(", "T1.num_of_employee", ")", "FROM", "shop", "AS", "T1", "JOIN", "district", "AS", "T2", "ON", "T1.district_id", "=", "T2.district_id", "GROUP", "BY", "T2.district_id"],
+    "query_toks_no_value": ["SELECT", "T2.name", ",", "sum", "(", "T1.num_of_employee", ")", "FROM", "shop", "AS", "T1", "JOIN", "district", "AS", "T2", "ON", "T1.district_id", "=", "T2.district_id", "GROUP", "BY", "T2.district_id"],
+    "question_toks": ["Qual", "é", "o", "total", "de", "funcionários", "por", "distrito", "?"]
+  },
+  {
+    "db_id": "employee_hire_evaluation",
+    "query": "SELECT name FROM shop WHERE num_of_employee > (SELECT avg(num_of_employee) FROM shop)",
+    "question": "Quais lojas têm mais funcionários do que a média?",
+    "query_toks": ["SELECT", "name", "FROM", "shop", "WHERE", "num_of_employee", ">", "(", "SELECT", "avg", "(", "num_of_employee", ")", "FROM", "shop", ")"],
+    "query_toks_no_value": ["SELECT", "name", "FROM", "shop", "WHERE", "num_of_employee", ">", "(", "SELECT", "avg", "(", "num_of_employee", ")", "FROM", "shop", ")"],
+    "question_toks": ["Quais", "lojas", "têm", "mais", "funcionários", "do", "que", "a", "média", "?"]
+  },
+  {
+    "db_id": "student_transcripts_tracking",
+    "query": "SELECT count(*) FROM students",
+    "question": "Quantos estudantes estão cadastrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "students"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "students"],
+    "question_toks": ["Quantos", "estudantes", "estão", "cadastrados", "?"]
+  },
+  {
+    "db_id": "student_transcripts_tracking",
+    "query": "SELECT first_name, last_name, date_of_birth FROM students ORDER BY date_of_birth ASC LIMIT 10",
+    "question": "Quais são os 10 estudantes mais jovens?",
+    "query_toks": ["SELECT", "first_name", ",", "last_name", ",", "date_of_birth", "FROM", "students", "ORDER", "BY", "date_of_birth", "ASC", "LIMIT", "10"],
+    "query_toks_no_value": ["SELECT", "first_name", ",", "last_name", ",", "date_of_birth", "FROM", "students", "ORDER", "BY", "date_of_birth", "ASC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "10", "estudantes", "mais", "jovens", "?"]
+  },
+  {
+    "db_id": "student_transcripts_tracking",
+    "query": "SELECT T1.first_name, T1.last_name, T2.degree_summary_name FROM students AS T1 JOIN degree_programs AS T2 ON T1.current_address_id = T2.department_id",
+    "question": "Quais estudantes estão matriculados em qual programa de graduação?",
+    "query_toks": ["SELECT", "T1.first_name", ",", "T1.last_name", ",", "T2.degree_summary_name", "FROM", "students", "AS", "T1", "JOIN", "degree_programs", "AS", "T2", "ON", "T1.current_address_id", "=", "T2.department_id"],
+    "query_toks_no_value": ["SELECT", "T1.first_name", ",", "T1.last_name", ",", "T2.degree_summary_name", "FROM", "students", "AS", "T1", "JOIN", "degree_programs", "AS", "T2", "ON", "T1.current_address_id", "=", "T2.department_id"],
+    "question_toks": ["Quais", "estudantes", "estão", "matriculados", "em", "qual", "programa", "de", "graduação", "?"]
+  },
+  {
+    "db_id": "student_transcripts_tracking",
+    "query": "SELECT count(DISTINCT department_id) FROM degree_programs",
+    "question": "Quantos departamentos oferecem programas de graduação?",
+    "query_toks": ["SELECT", "count", "(", "DISTINCT", "department_id", ")", "FROM", "degree_programs"],
+    "query_toks_no_value": ["SELECT", "count", "(", "DISTINCT", "department_id", ")", "FROM", "degree_programs"],
+    "question_toks": ["Quantos", "departamentos", "oferecem", "programas", "de", "graduação", "?"]
+  },
+  {
+    "db_id": "tvshow",
+    "query": "SELECT count(*) FROM TV_Channel",
+    "question": "Quantos canais de televisão existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "TV_Channel"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "TV_Channel"],
+    "question_toks": ["Quantos", "canais", "de", "televisão", "existem", "?"]
+  },
+  {
+    "db_id": "tvshow",
+    "query": "SELECT series_name, country FROM TV_series ORDER BY rating DESC LIMIT 5",
+    "question": "Quais são as 5 séries de TV com as melhores avaliações?",
+    "query_toks": ["SELECT", "series_name", ",", "country", "FROM", "TV_series", "ORDER", "BY", "rating", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "series_name", ",", "country", "FROM", "TV_series", "ORDER", "BY", "rating", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "as", "5", "séries", "de", "TV", "com", "as", "melhores", "avaliações", "?"]
+  },
+  {
+    "db_id": "tvshow",
+    "query": "SELECT T1.series_name FROM TV_series AS T1 JOIN TV_Channel AS T2 ON T1.Channel = T2.id WHERE T2.language = 'English'",
+    "question": "Quais séries de TV são transmitidas em canais em inglês?",
+    "query_toks": ["SELECT", "T1.series_name", "FROM", "TV_series", "AS", "T1", "JOIN", "TV_Channel", "AS", "T2", "ON", "T1.Channel", "=", "T2.id", "WHERE", "T2.language", "=", "'English'"],
+    "query_toks_no_value": ["SELECT", "T1.series_name", "FROM", "TV_series", "AS", "T1", "JOIN", "TV_Channel", "AS", "T2", "ON", "T1.Channel", "=", "T2.id", "WHERE", "T2.language", "=", "value"],
+    "question_toks": ["Quais", "séries", "de", "TV", "são", "transmitidas", "em", "canais", "em", "inglês", "?"]
+  },
+  {
+    "db_id": "tvshow",
+    "query": "SELECT avg(rating) FROM Cartoon WHERE directed_by = 'Ben Jones'",
+    "question": "Qual é a avaliação média dos desenhos animados dirigidos por Ben Jones?",
+    "query_toks": ["SELECT", "avg", "(", "rating", ")", "FROM", "Cartoon", "WHERE", "directed_by", "=", "'Ben Jones'"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "rating", ")", "FROM", "Cartoon", "WHERE", "directed_by", "=", "value"],
+    "question_toks": ["Qual", "é", "a", "avaliação", "média", "dos", "desenhos", "animados", "dirigidos", "por", "Ben", "Jones", "?"]
+  },
+  {
+    "db_id": "tvshow",
+    "query": "SELECT country, count(*) FROM TV_Channel GROUP BY country HAVING count(*) > 2",
+    "question": "Quais países têm mais de 2 canais de televisão?",
+    "query_toks": ["SELECT", "country", ",", "count", "(", "*", ")", "FROM", "TV_Channel", "GROUP", "BY", "country", "HAVING", "count", "(", "*", ")", ">", "2"],
+    "query_toks_no_value": ["SELECT", "country", ",", "count", "(", "*", ")", "FROM", "TV_Channel", "GROUP", "BY", "country", "HAVING", "count", "(", "*", ")", ">", "value"],
+    "question_toks": ["Quais", "países", "têm", "mais", "de", "2", "canais", "de", "televisão", "?"]
+  },
+  {
+    "db_id": "world_1",
+    "query": "SELECT name, population FROM country ORDER BY population DESC LIMIT 10",
+    "question": "Quais são os 10 países mais populosos?",
+    "query_toks": ["SELECT", "name", ",", "population", "FROM", "country", "ORDER", "BY", "population", "DESC", "LIMIT", "10"],
+    "query_toks_no_value": ["SELECT", "name", ",", "population", "FROM", "country", "ORDER", "BY", "population", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "10", "países", "mais", "populosos", "?"]
+  },
+  {
+    "db_id": "world_1",
+    "query": "SELECT name, surfacearea FROM country WHERE continent = 'South America' ORDER BY surfacearea DESC",
+    "question": "Quais países da América do Sul têm maior área superficial?",
+    "query_toks": ["SELECT", "name", ",", "surfacearea", "FROM", "country", "WHERE", "continent", "=", "'South America'", "ORDER", "BY", "surfacearea", "DESC"],
+    "query_toks_no_value": ["SELECT", "name", ",", "surfacearea", "FROM", "country", "WHERE", "continent", "=", "value", "ORDER", "BY", "surfacearea", "DESC"],
+    "question_toks": ["Quais", "países", "da", "América", "do", "Sul", "têm", "maior", "área", "superficial", "?"]
+  },
+  {
+    "db_id": "world_1",
+    "query": "SELECT T1.name FROM city AS T1 JOIN country AS T2 ON T1.countrycode = T2.code WHERE T2.name = 'Brazil' ORDER BY T1.population DESC LIMIT 1",
+    "question": "Qual é a cidade mais populosa do Brasil?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "city", "AS", "T1", "JOIN", "country", "AS", "T2", "ON", "T1.countrycode", "=", "T2.code", "WHERE", "T2.name", "=", "'Brazil'", "ORDER", "BY", "T1.population", "DESC", "LIMIT", "1"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "city", "AS", "T1", "JOIN", "country", "AS", "T2", "ON", "T1.countrycode", "=", "T2.code", "WHERE", "T2.name", "=", "value", "ORDER", "BY", "T1.population", "DESC", "LIMIT", "value"],
+    "question_toks": ["Qual", "é", "a", "cidade", "mais", "populosa", "do", "Brasil", "?"]
+  },
+  {
+    "db_id": "world_1",
+    "query": "SELECT count(DISTINCT language) FROM countrylanguage WHERE isofficial = 'T'",
+    "question": "Quantas línguas oficiais existem no mundo?",
+    "query_toks": ["SELECT", "count", "(", "DISTINCT", "language", ")", "FROM", "countrylanguage", "WHERE", "isofficial", "=", "'T'"],
+    "query_toks_no_value": ["SELECT", "count", "(", "DISTINCT", "language", ")", "FROM", "countrylanguage", "WHERE", "isofficial", "=", "value"],
+    "question_toks": ["Quantas", "línguas", "oficiais", "existem", "no", "mundo", "?"]
+  },
+  {
+    "db_id": "world_1",
+    "query": "SELECT continent, avg(gnp) FROM country GROUP BY continent",
+    "question": "Qual é o PNB médio por continente?",
+    "query_toks": ["SELECT", "continent", ",", "avg", "(", "gnp", ")", "FROM", "country", "GROUP", "BY", "continent"],
+    "query_toks_no_value": ["SELECT", "continent", ",", "avg", "(", "gnp", ")", "FROM", "country", "GROUP", "BY", "continent"],
+    "question_toks": ["Qual", "é", "o", "PNB", "médio", "por", "continente", "?"]
+  },
+  {
+    "db_id": "world_1",
+    "query": "SELECT name FROM country WHERE lifeexpectancy > 80 AND continent = 'Europe'",
+    "question": "Quais países europeus têm expectativa de vida acima de 80 anos?",
+    "query_toks": ["SELECT", "name", "FROM", "country", "WHERE", "lifeexpectancy", ">", "80", "AND", "continent", "=", "'Europe'"],
+    "query_toks_no_value": ["SELECT", "name", "FROM", "country", "WHERE", "lifeexpectancy", ">", "value", "AND", "continent", "=", "value"],
+    "question_toks": ["Quais", "países", "europeus", "têm", "expectativa", "de", "vida", "acima", "de", "80", "anos", "?"]
+  },
+  {
+    "db_id": "world_1",
+    "query": "SELECT T2.language, count(*) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.code = T2.countrycode WHERE T1.continent = 'Africa' GROUP BY T2.language ORDER BY count(*) DESC LIMIT 3",
+    "question": "Quais são as 3 línguas mais faladas na África?",
+    "query_toks": ["SELECT", "T2.language", ",", "count", "(", "*", ")", "FROM", "country", "AS", "T1", "JOIN", "countrylanguage", "AS", "T2", "ON", "T1.code", "=", "T2.countrycode", "WHERE", "T1.continent", "=", "'Africa'", "GROUP", "BY", "T2.language", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "3"],
+    "query_toks_no_value": ["SELECT", "T2.language", ",", "count", "(", "*", ")", "FROM", "country", "AS", "T1", "JOIN", "countrylanguage", "AS", "T2", "ON", "T1.code", "=", "T2.countrycode", "WHERE", "T1.continent", "=", "value", "GROUP", "BY", "T2.language", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "as", "3", "línguas", "mais", "faladas", "na", "África", "?"]
+  },
+  {
+    "db_id": "network_1",
+    "query": "SELECT count(*) FROM highschooler",
+    "question": "Quantos alunos do ensino médio estão cadastrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "highschooler"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "highschooler"],
+    "question_toks": ["Quantos", "alunos", "do", "ensino", "médio", "estão", "cadastrados", "?"]
+  },
+  {
+    "db_id": "network_1",
+    "query": "SELECT name FROM highschooler WHERE grade = 10",
+    "question": "Quais são os alunos da décima série?",
+    "query_toks": ["SELECT", "name", "FROM", "highschooler", "WHERE", "grade", "=", "10"],
+    "query_toks_no_value": ["SELECT", "name", "FROM", "highschooler", "WHERE", "grade", "=", "value"],
+    "question_toks": ["Quais", "são", "os", "alunos", "da", "décima", "série", "?"]
+  },
+  {
+    "db_id": "network_1",
+    "query": "SELECT T1.name FROM highschooler AS T1 JOIN friend AS T2 ON T1.id = T2.student_id GROUP BY T2.student_id HAVING count(*) >= 3",
+    "question": "Quais estudantes têm pelo menos 3 amigos?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "highschooler", "AS", "T1", "JOIN", "friend", "AS", "T2", "ON", "T1.id", "=", "T2.student_id", "GROUP", "BY", "T2.student_id", "HAVING", "count", "(", "*", ")", ">=", "3"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "highschooler", "AS", "T1", "JOIN", "friend", "AS", "T2", "ON", "T1.id", "=", "T2.student_id", "GROUP", "BY", "T2.student_id", "HAVING", "count", "(", "*", ")", ">=", "value"],
+    "question_toks": ["Quais", "estudantes", "têm", "pelo", "menos", "3", "amigos", "?"]
+  },
+  {
+    "db_id": "network_1",
+    "query": "SELECT T1.name FROM highschooler AS T1 JOIN likes AS T2 ON T1.id = T2.liked_id GROUP BY T2.liked_id ORDER BY count(*) DESC LIMIT 1",
+    "question": "Qual estudante é mais querido pelos outros?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "highschooler", "AS", "T1", "JOIN", "likes", "AS", "T2", "ON", "T1.id", "=", "T2.liked_id", "GROUP", "BY", "T2.liked_id", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "1"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "highschooler", "AS", "T1", "JOIN", "likes", "AS", "T2", "ON", "T1.id", "=", "T2.liked_id", "GROUP", "BY", "T2.liked_id", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Qual", "estudante", "é", "mais", "querido", "pelos", "outros", "?"]
+  },
+  {
+    "db_id": "network_1",
+    "query": "SELECT name FROM highschooler WHERE id NOT IN (SELECT student_id FROM friend)",
+    "question": "Quais estudantes não têm amigos cadastrados?",
+    "query_toks": ["SELECT", "name", "FROM", "highschooler", "WHERE", "id", "NOT", "IN", "(", "SELECT", "student_id", "FROM", "friend", ")"],
+    "query_toks_no_value": ["SELECT", "name", "FROM", "highschooler", "WHERE", "id", "NOT", "IN", "(", "SELECT", "student_id", "FROM", "friend", ")"],
+    "question_toks": ["Quais", "estudantes", "não", "têm", "amigos", "cadastrados", "?"]
+  },
+  {
+    "db_id": "orchestra",
+    "query": "SELECT count(*) FROM orchestra",
+    "question": "Quantas orquestras estão registradas?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "orchestra"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "orchestra"],
+    "question_toks": ["Quantas", "orquestras", "estão", "registradas", "?"]
+  },
+  {
+    "db_id": "orchestra",
+    "query": "SELECT name, major_orchestra FROM orchestra ORDER BY year_of_founded ASC",
+    "question": "Quais orquestras são as mais antigas?",
+    "query_toks": ["SELECT", "name", ",", "major_orchestra", "FROM", "orchestra", "ORDER", "BY", "year_of_founded", "ASC"],
+    "query_toks_no_value": ["SELECT", "name", ",", "major_orchestra", "FROM", "orchestra", "ORDER", "BY", "year_of_founded", "ASC"],
+    "question_toks": ["Quais", "orquestras", "são", "as", "mais", "antigas", "?"]
+  },
+  {
+    "db_id": "orchestra",
+    "query": "SELECT T1.name FROM conductor AS T1 JOIN orchestra AS T2 ON T1.conductor_id = T2.conductor_id WHERE T2.record_company = 'RCA Red Seal'",
+    "question": "Quais maestros trabalham com orquestras da gravadora RCA Red Seal?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "conductor", "AS", "T1", "JOIN", "orchestra", "AS", "T2", "ON", "T1.conductor_id", "=", "T2.conductor_id", "WHERE", "T2.record_company", "=", "'RCA Red Seal'"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "conductor", "AS", "T1", "JOIN", "orchestra", "AS", "T2", "ON", "T1.conductor_id", "=", "T2.conductor_id", "WHERE", "T2.record_company", "=", "value"],
+    "question_toks": ["Quais", "maestros", "trabalham", "com", "orquestras", "da", "gravadora", "RCA Red Seal", "?"]
+  },
+  {
+    "db_id": "orchestra",
+    "query": "SELECT T2.performance_type, count(*) FROM orchestra AS T1 JOIN performance AS T2 ON T1.orchestra_id = T2.orchestra_id GROUP BY T2.performance_type",
+    "question": "Quantas performances de cada tipo foram realizadas?",
+    "query_toks": ["SELECT", "T2.performance_type", ",", "count", "(", "*", ")", "FROM", "orchestra", "AS", "T1", "JOIN", "performance", "AS", "T2", "ON", "T1.orchestra_id", "=", "T2.orchestra_id", "GROUP", "BY", "T2.performance_type"],
+    "query_toks_no_value": ["SELECT", "T2.performance_type", ",", "count", "(", "*", ")", "FROM", "orchestra", "AS", "T1", "JOIN", "performance", "AS", "T2", "ON", "T1.orchestra_id", "=", "T2.orchestra_id", "GROUP", "BY", "T2.performance_type"],
+    "question_toks": ["Quantas", "performances", "de", "cada", "tipo", "foram", "realizadas", "?"]
+  },
+  {
+    "db_id": "poker_player",
+    "query": "SELECT count(*) FROM poker_player",
+    "question": "Quantos jogadores de poker estão cadastrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "poker_player"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "poker_player"],
+    "question_toks": ["Quantos", "jogadores", "de", "poker", "estão", "cadastrados", "?"]
+  },
+  {
+    "db_id": "poker_player",
+    "query": "SELECT earnings, best_finish FROM poker_player ORDER BY earnings DESC LIMIT 1",
+    "question": "Quais são os ganhos e melhor resultado do jogador com maiores ganhos?",
+    "query_toks": ["SELECT", "earnings", ",", "best_finish", "FROM", "poker_player", "ORDER", "BY", "earnings", "DESC", "LIMIT", "1"],
+    "query_toks_no_value": ["SELECT", "earnings", ",", "best_finish", "FROM", "poker_player", "ORDER", "BY", "earnings", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "ganhos", "e", "melhor", "resultado", "do", "jogador", "com", "maiores", "ganhos", "?"]
+  },
+  {
+    "db_id": "poker_player",
+    "query": "SELECT avg(earnings), max(earnings), min(earnings) FROM poker_player",
+    "question": "Qual é a média, máximo e mínimo de ganhos entre os jogadores de poker?",
+    "query_toks": ["SELECT", "avg", "(", "earnings", ")", ",", "max", "(", "earnings", ")", ",", "min", "(", "earnings", ")", "FROM", "poker_player"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "earnings", ")", ",", "max", "(", "earnings", ")", ",", "min", "(", "earnings", ")", "FROM", "poker_player"],
+    "question_toks": ["Qual", "é", "a", "média", ",", "máximo", "e", "mínimo", "de", "ganhos", "entre", "os", "jogadores", "de", "poker", "?"]
+  },
+  {
+    "db_id": "poker_player",
+    "query": "SELECT T1.name FROM people AS T1 JOIN poker_player AS T2 ON T1.people_id = T2.people_id WHERE T2.final_table_made > 20",
+    "question": "Quais jogadores chegaram à mesa final mais de 20 vezes?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "people", "AS", "T1", "JOIN", "poker_player", "AS", "T2", "ON", "T1.people_id", "=", "T2.people_id", "WHERE", "T2.final_table_made", ">", "20"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "people", "AS", "T1", "JOIN", "poker_player", "AS", "T2", "ON", "T1.people_id", "=", "T2.people_id", "WHERE", "T2.final_table_made", ">", "value"],
+    "question_toks": ["Quais", "jogadores", "chegaram", "à", "mesa", "final", "mais", "de", "20", "vezes", "?"]
+  },
+  {
+    "db_id": "battle_death",
+    "query": "SELECT count(*) FROM battle",
+    "question": "Quantas batalhas estão registradas?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "battle"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "battle"],
+    "question_toks": ["Quantas", "batalhas", "estão", "registradas", "?"]
+  },
+  {
+    "db_id": "battle_death",
+    "query": "SELECT name, result FROM battle ORDER BY id ASC",
+    "question": "Quais são os nomes e resultados das batalhas em ordem cronológica?",
+    "query_toks": ["SELECT", "name", ",", "result", "FROM", "battle", "ORDER", "BY", "id", "ASC"],
+    "query_toks_no_value": ["SELECT", "name", ",", "result", "FROM", "battle", "ORDER", "BY", "id", "ASC"],
+    "question_toks": ["Quais", "são", "os", "nomes", "e", "resultados", "das", "batalhas", "em", "ordem", "cronológica", "?"]
+  },
+  {
+    "db_id": "battle_death",
+    "query": "SELECT T1.name, count(T2.id) FROM battle AS T1 JOIN death AS T2 ON T1.id = T2.killed_id GROUP BY T1.id ORDER BY count(T2.id) DESC",
+    "question": "Quantas mortes ocorreram em cada batalha?",
+    "query_toks": ["SELECT", "T1.name", ",", "count", "(", "T2.id", ")", "FROM", "battle", "AS", "T1", "JOIN", "death", "AS", "T2", "ON", "T1.id", "=", "T2.killed_id", "GROUP", "BY", "T1.id", "ORDER", "BY", "count", "(", "T2.id", ")", "DESC"],
+    "query_toks_no_value": ["SELECT", "T1.name", ",", "count", "(", "T2.id", ")", "FROM", "battle", "AS", "T1", "JOIN", "death", "AS", "T2", "ON", "T1.id", "=", "T2.killed_id", "GROUP", "BY", "T1.id", "ORDER", "BY", "count", "(", "T2.id", ")", "DESC"],
+    "question_toks": ["Quantas", "mortes", "ocorreram", "em", "cada", "batalha", "?"]
+  },
+  {
+    "db_id": "battle_death",
+    "query": "SELECT T2.name FROM ship AS T2 WHERE T2.id NOT IN (SELECT lost_in_battle FROM death)",
+    "question": "Quais navios nunca foram envolvidos em mortes?",
+    "query_toks": ["SELECT", "T2.name", "FROM", "ship", "AS", "T2", "WHERE", "T2.id", "NOT", "IN", "(", "SELECT", "lost_in_battle", "FROM", "death", ")"],
+    "query_toks_no_value": ["SELECT", "T2.name", "FROM", "ship", "AS", "T2", "WHERE", "T2.id", "NOT", "IN", "(", "SELECT", "lost_in_battle", "FROM", "death", ")"],
+    "question_toks": ["Quais", "navios", "nunca", "foram", "envolvidos", "em", "mortes", "?"]
+  },
+  {
+    "db_id": "wta_1",
+    "query": "SELECT count(*) FROM players WHERE country_code = 'BRA'",
+    "question": "Quantas jogadoras de tênis são do Brasil?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "players", "WHERE", "country_code", "=", "'BRA'"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "players", "WHERE", "country_code", "=", "value"],
+    "question_toks": ["Quantas", "jogadoras", "de", "tênis", "são", "do", "Brasil", "?"]
+  },
+  {
+    "db_id": "wta_1",
+    "query": "SELECT first_name, last_name FROM players WHERE hand = 'L' AND country_code = 'USA'",
+    "question": "Quais são as jogadoras americanas canhotas?",
+    "query_toks": ["SELECT", "first_name", ",", "last_name", "FROM", "players", "WHERE", "hand", "=", "'L'", "AND", "country_code", "=", "'USA'"],
+    "query_toks_no_value": ["SELECT", "first_name", ",", "last_name", "FROM", "players", "WHERE", "hand", "=", "value", "AND", "country_code", "=", "value"],
+    "question_toks": ["Quais", "são", "as", "jogadoras", "americanas", "canhotas", "?"]
+  },
+  {
+    "db_id": "wta_1",
+    "query": "SELECT T1.first_name, T1.last_name, count(*) FROM players AS T1 JOIN matches AS T2 ON T1.player_id = T2.winner_id GROUP BY T2.winner_id ORDER BY count(*) DESC LIMIT 5",
+    "question": "Quais são as 5 jogadoras com mais vitórias?",
+    "query_toks": ["SELECT", "T1.first_name", ",", "T1.last_name", ",", "count", "(", "*", ")", "FROM", "players", "AS", "T1", "JOIN", "matches", "AS", "T2", "ON", "T1.player_id", "=", "T2.winner_id", "GROUP", "BY", "T2.winner_id", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "T1.first_name", ",", "T1.last_name", ",", "count", "(", "*", ")", "FROM", "players", "AS", "T1", "JOIN", "matches", "AS", "T2", "ON", "T1.player_id", "=", "T2.winner_id", "GROUP", "BY", "T2.winner_id", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "as", "5", "jogadoras", "com", "mais", "vitórias", "?"]
+  },
+  {
+    "db_id": "wta_1",
+    "query": "SELECT avg(winner_rank_points), avg(loser_rank_points) FROM matches WHERE tourney_name = 'Wimbledon'",
+    "question": "Qual é a média de pontos de ranking de vencedoras e perdedoras em Wimbledon?",
+    "query_toks": ["SELECT", "avg", "(", "winner_rank_points", ")", ",", "avg", "(", "loser_rank_points", ")", "FROM", "matches", "WHERE", "tourney_name", "=", "'Wimbledon'"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "winner_rank_points", ")", ",", "avg", "(", "loser_rank_points", ")", "FROM", "matches", "WHERE", "tourney_name", "=", "value"],
+    "question_toks": ["Qual", "é", "a", "média", "de", "pontos", "de", "ranking", "de", "vencedoras", "e", "perdedoras", "em", "Wimbledon", "?"]
+  },
+  {
+    "db_id": "wta_1",
+    "query": "SELECT surface, count(*) FROM matches GROUP BY surface",
+    "question": "Quantas partidas foram jogadas em cada tipo de superfície?",
+    "query_toks": ["SELECT", "surface", ",", "count", "(", "*", ")", "FROM", "matches", "GROUP", "BY", "surface"],
+    "query_toks_no_value": ["SELECT", "surface", ",", "count", "(", "*", ")", "FROM", "matches", "GROUP", "BY", "surface"],
+    "question_toks": ["Quantas", "partidas", "foram", "jogadas", "em", "cada", "tipo", "de", "superfície", "?"]
+  },
+  {
+    "db_id": "cre_Doc_Template_Mgt",
+    "query": "SELECT count(*) FROM Templates",
+    "question": "Quantos templates existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "Templates"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "Templates"],
+    "question_toks": ["Quantos", "templates", "existem", "?"]
+  },
+  {
+    "db_id": "cre_Doc_Template_Mgt",
+    "query": "SELECT template_type_code, count(*) FROM Templates GROUP BY template_type_code ORDER BY count(*) DESC",
+    "question": "Quantos templates existem de cada tipo?",
+    "query_toks": ["SELECT", "template_type_code", ",", "count", "(", "*", ")", "FROM", "Templates", "GROUP", "BY", "template_type_code", "ORDER", "BY", "count", "(", "*", ")", "DESC"],
+    "query_toks_no_value": ["SELECT", "template_type_code", ",", "count", "(", "*", ")", "FROM", "Templates", "GROUP", "BY", "template_type_code", "ORDER", "BY", "count", "(", "*", ")", "DESC"],
+    "question_toks": ["Quantos", "templates", "existem", "de", "cada", "tipo", "?"]
+  },
+  {
+    "db_id": "cre_Doc_Template_Mgt",
+    "query": "SELECT T1.document_name FROM Documents AS T1 JOIN Templates AS T2 ON T1.template_id = T2.template_id WHERE T2.template_type_code = 'PP'",
+    "question": "Quais documentos usam templates do tipo PP?",
+    "query_toks": ["SELECT", "T1.document_name", "FROM", "Documents", "AS", "T1", "JOIN", "Templates", "AS", "T2", "ON", "T1.template_id", "=", "T2.template_id", "WHERE", "T2.template_type_code", "=", "'PP'"],
+    "query_toks_no_value": ["SELECT", "T1.document_name", "FROM", "Documents", "AS", "T1", "JOIN", "Templates", "AS", "T2", "ON", "T1.template_id", "=", "T2.template_id", "WHERE", "T2.template_type_code", "=", "value"],
+    "question_toks": ["Quais", "documentos", "usam", "templates", "do", "tipo", "PP", "?"]
+  },
+  {
+    "db_id": "cre_Doc_Template_Mgt",
+    "query": "SELECT document_name FROM Documents WHERE document_name LIKE '%CV%'",
+    "question": "Quais documentos têm 'CV' no nome?",
+    "query_toks": ["SELECT", "document_name", "FROM", "Documents", "WHERE", "document_name", "LIKE", "'%CV%'"],
+    "query_toks_no_value": ["SELECT", "document_name", "FROM", "Documents", "WHERE", "document_name", "LIKE", "value"],
+    "question_toks": ["Quais", "documentos", "têm", "'CV'", "no", "nome", "?"]
+  },
+  {
+    "db_id": "museum_visit",
+    "query": "SELECT count(*) FROM museum",
+    "question": "Quantos museus existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "museum"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "museum"],
+    "question_toks": ["Quantos", "museus", "existem", "?"]
+  },
+  {
+    "db_id": "museum_visit",
+    "query": "SELECT name, open_year FROM museum ORDER BY open_year ASC",
+    "question": "Quais museus foram abertos primeiro?",
+    "query_toks": ["SELECT", "name", ",", "open_year", "FROM", "museum", "ORDER", "BY", "open_year", "ASC"],
+    "query_toks_no_value": ["SELECT", "name", ",", "open_year", "FROM", "museum", "ORDER", "BY", "open_year", "ASC"],
+    "question_toks": ["Quais", "museus", "foram", "abertos", "primeiro", "?"]
+  },
+  {
+    "db_id": "museum_visit",
+    "query": "SELECT T1.name, count(T2.visitor_id) FROM museum AS T1 JOIN visit AS T2 ON T1.museum_id = T2.museum_id GROUP BY T1.museum_id ORDER BY count(T2.visitor_id) DESC",
+    "question": "Quais museus recebem mais visitantes?",
+    "query_toks": ["SELECT", "T1.name", ",", "count", "(", "T2.visitor_id", ")", "FROM", "museum", "AS", "T1", "JOIN", "visit", "AS", "T2", "ON", "T1.museum_id", "=", "T2.museum_id", "GROUP", "BY", "T1.museum_id", "ORDER", "BY", "count", "(", "T2.visitor_id", ")", "DESC"],
+    "query_toks_no_value": ["SELECT", "T1.name", ",", "count", "(", "T2.visitor_id", ")", "FROM", "museum", "AS", "T1", "JOIN", "visit", "AS", "T2", "ON", "T1.museum_id", "=", "T2.museum_id", "GROUP", "BY", "T1.museum_id", "ORDER", "BY", "count", "(", "T2.visitor_id", ")", "DESC"],
+    "question_toks": ["Quais", "museus", "recebem", "mais", "visitantes", "?"]
+  },
+  {
+    "db_id": "museum_visit",
+    "query": "SELECT avg(num_of_staff) FROM museum WHERE open_year > 2000",
+    "question": "Qual é o número médio de funcionários nos museus abertos após 2000?",
+    "query_toks": ["SELECT", "avg", "(", "num_of_staff", ")", "FROM", "museum", "WHERE", "open_year", ">", "2000"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "num_of_staff", ")", "FROM", "museum", "WHERE", "open_year", ">", "value"],
+    "question_toks": ["Qual", "é", "o", "número", "médio", "de", "funcionários", "nos", "museus", "abertos", "após", "2000", "?"]
+  },
+  {
+    "db_id": "museum_visit",
+    "query": "SELECT T1.name FROM visitor AS T1 JOIN visit AS T2 ON T1.id = T2.visitor_id GROUP BY T1.id HAVING sum(T2.total_spent) > 100",
+    "question": "Quais visitantes gastaram mais de 100 no total?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "visitor", "AS", "T1", "JOIN", "visit", "AS", "T2", "ON", "T1.id", "=", "T2.visitor_id", "GROUP", "BY", "T1.id", "HAVING", "sum", "(", "T2.total_spent", ")", ">", "100"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "visitor", "AS", "T1", "JOIN", "visit", "AS", "T2", "ON", "T1.id", "=", "T2.visitor_id", "GROUP", "BY", "T1.id", "HAVING", "sum", "(", "T2.total_spent", ")", ">", "value"],
+    "question_toks": ["Quais", "visitantes", "gastaram", "mais", "de", "100", "no", "total", "?"]
+  },
+  {
+    "db_id": "document_management",
+    "query": "SELECT count(*) FROM documents",
+    "question": "Qual é o total de documentos no sistema?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "documents"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "documents"],
+    "question_toks": ["Qual", "é", "o", "total", "de", "documentos", "no", "sistema", "?"]
+  },
+  {
+    "db_id": "document_management",
+    "query": "SELECT document_type_code, count(*) FROM documents GROUP BY document_type_code",
+    "question": "Quantos documentos existem por tipo?",
+    "query_toks": ["SELECT", "document_type_code", ",", "count", "(", "*", ")", "FROM", "documents", "GROUP", "BY", "document_type_code"],
+    "query_toks_no_value": ["SELECT", "document_type_code", ",", "count", "(", "*", ")", "FROM", "documents", "GROUP", "BY", "document_type_code"],
+    "question_toks": ["Quantos", "documentos", "existem", "por", "tipo", "?"]
+  },
+  {
+    "db_id": "e_government",
+    "query": "SELECT count(*) FROM services",
+    "question": "Quantos serviços estão disponíveis?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "services"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "services"],
+    "question_toks": ["Quantos", "serviços", "estão", "disponíveis", "?"]
+  },
+  {
+    "db_id": "e_government",
+    "query": "SELECT service_name, service_fee FROM services ORDER BY service_fee DESC",
+    "question": "Quais serviços têm maior taxa?",
+    "query_toks": ["SELECT", "service_name", ",", "service_fee", "FROM", "services", "ORDER", "BY", "service_fee", "DESC"],
+    "query_toks_no_value": ["SELECT", "service_name", ",", "service_fee", "FROM", "services", "ORDER", "BY", "service_fee", "DESC"],
+    "question_toks": ["Quais", "serviços", "têm", "maior", "taxa", "?"]
+  },
+  {
+    "db_id": "e_government",
+    "query": "SELECT T1.name FROM customers AS T1 JOIN customers_services AS T2 ON T1.customer_id = T2.customer_id GROUP BY T1.customer_id HAVING count(*) >= 3",
+    "question": "Quais clientes usam pelo menos 3 serviços?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "customers", "AS", "T1", "JOIN", "customers_services", "AS", "T2", "ON", "T1.customer_id", "=", "T2.customer_id", "GROUP", "BY", "T1.customer_id", "HAVING", "count", "(", "*", ")", ">=", "3"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "customers", "AS", "T1", "JOIN", "customers_services", "AS", "T2", "ON", "T1.customer_id", "=", "T2.customer_id", "GROUP", "BY", "T1.customer_id", "HAVING", "count", "(", "*", ")", ">=", "value"],
+    "question_toks": ["Quais", "clientes", "usam", "pelo", "menos", "3", "serviços", "?"]
+  },
+  {
+    "db_id": "race_track",
+    "query": "SELECT count(*) FROM race",
+    "question": "Quantas corridas estão registradas?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "race"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "race"],
+    "question_toks": ["Quantas", "corridas", "estão", "registradas", "?"]
+  },
+  {
+    "db_id": "race_track",
+    "query": "SELECT name, class, date FROM race ORDER BY date ASC",
+    "question": "Quais são as corridas em ordem de data?",
+    "query_toks": ["SELECT", "name", ",", "class", ",", "date", "FROM", "race", "ORDER", "BY", "date", "ASC"],
+    "query_toks_no_value": ["SELECT", "name", ",", "class", ",", "date", "FROM", "race", "ORDER", "BY", "date", "ASC"],
+    "question_toks": ["Quais", "são", "as", "corridas", "em", "ordem", "de", "data", "?"]
+  },
+  {
+    "db_id": "race_track",
+    "query": "SELECT T1.name, T2.name FROM race AS T1 JOIN track AS T2 ON T1.track_id = T2.track_id",
+    "question": "Quais são as corridas e seus respectivos circuitos?",
+    "query_toks": ["SELECT", "T1.name", ",", "T2.name", "FROM", "race", "AS", "T1", "JOIN", "track", "AS", "T2", "ON", "T1.track_id", "=", "T2.track_id"],
+    "query_toks_no_value": ["SELECT", "T1.name", ",", "T2.name", "FROM", "race", "AS", "T1", "JOIN", "track", "AS", "T2", "ON", "T1.track_id", "=", "T2.track_id"],
+    "question_toks": ["Quais", "são", "as", "corridas", "e", "seus", "respectivos", "circuitos", "?"]
+  },
+  {
+    "db_id": "race_track",
+    "query": "SELECT avg(seating), max(seating) FROM track",
+    "question": "Qual é a capacidade média e máxima dos circuitos de corrida?",
+    "query_toks": ["SELECT", "avg", "(", "seating", ")", ",", "max", "(", "seating", ")", "FROM", "track"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "seating", ")", ",", "max", "(", "seating", ")", "FROM", "track"],
+    "question_toks": ["Qual", "é", "a", "capacidade", "média", "e", "máxima", "dos", "circuitos", "de", "corrida", "?"]
+  },
+  {
+    "db_id": "manufact_1",
+    "query": "SELECT count(*) FROM manufacturer",
+    "question": "Quantos fabricantes estão registrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "manufacturer"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "manufacturer"],
+    "question_toks": ["Quantos", "fabricantes", "estão", "registrados", "?"]
+  },
+  {
+    "db_id": "manufact_1",
+    "query": "SELECT T1.name, T2.name FROM manufacturer AS T1 JOIN furniture AS T2 ON T1.manufacturer_id = T2.manufacturer_id",
+    "question": "Quais móveis são produzidos por quais fabricantes?",
+    "query_toks": ["SELECT", "T1.name", ",", "T2.name", "FROM", "manufacturer", "AS", "T1", "JOIN", "furniture", "AS", "T2", "ON", "T1.manufacturer_id", "=", "T2.manufacturer_id"],
+    "query_toks_no_value": ["SELECT", "T1.name", ",", "T2.name", "FROM", "manufacturer", "AS", "T1", "JOIN", "furniture", "AS", "T2", "ON", "T1.manufacturer_id", "=", "T2.manufacturer_id"],
+    "question_toks": ["Quais", "móveis", "são", "produzidos", "por", "quais", "fabricantes", "?"]
+  },
+  {
+    "db_id": "manufact_1",
+    "query": "SELECT name, market_share FROM manufacturer ORDER BY market_share DESC LIMIT 3",
+    "question": "Quais são os 3 fabricantes com maior participação de mercado?",
+    "query_toks": ["SELECT", "name", ",", "market_share", "FROM", "manufacturer", "ORDER", "BY", "market_share", "DESC", "LIMIT", "3"],
+    "query_toks_no_value": ["SELECT", "name", ",", "market_share", "FROM", "manufacturer", "ORDER", "BY", "market_share", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "3", "fabricantes", "com", "maior", "participação", "de", "mercado", "?"]
+  },
+  {
+    "db_id": "manufact_1",
+    "query": "SELECT T1.name FROM manufacturer AS T1 WHERE T1.manufacturer_id NOT IN (SELECT manufacturer_id FROM furniture)",
+    "question": "Quais fabricantes não produzem nenhum móvel?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "manufacturer", "AS", "T1", "WHERE", "T1.manufacturer_id", "NOT", "IN", "(", "SELECT", "manufacturer_id", "FROM", "furniture", ")"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "manufacturer", "AS", "T1", "WHERE", "T1.manufacturer_id", "NOT", "IN", "(", "SELECT", "manufacturer_id", "FROM", "furniture", ")"],
+    "question_toks": ["Quais", "fabricantes", "não", "produzem", "nenhum", "móvel", "?"]
+  },
+  {
+    "db_id": "voting_information",
+    "query": "SELECT count(*) FROM county",
+    "question": "Quantos condados existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "county"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "county"],
+    "question_toks": ["Quantos", "condados", "existem", "?"]
+  },
+  {
+    "db_id": "voting_information",
+    "query": "SELECT county_name, population FROM county ORDER BY population DESC LIMIT 5",
+    "question": "Quais são os 5 condados mais populosos?",
+    "query_toks": ["SELECT", "county_name", ",", "population", "FROM", "county", "ORDER", "BY", "population", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "county_name", ",", "population", "FROM", "county", "ORDER", "BY", "population", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "5", "condados", "mais", "populosos", "?"]
+  },
+  {
+    "db_id": "voting_information",
+    "query": "SELECT T1.county_name, count(T2.zip_code) FROM county AS T1 JOIN zip_code AS T2 ON T1.county_id = T2.county_id GROUP BY T1.county_id",
+    "question": "Quantos CEPs cada condado possui?",
+    "query_toks": ["SELECT", "T1.county_name", ",", "count", "(", "T2.zip_code", ")", "FROM", "county", "AS", "T1", "JOIN", "zip_code", "AS", "T2", "ON", "T1.county_id", "=", "T2.county_id", "GROUP", "BY", "T1.county_id"],
+    "query_toks_no_value": ["SELECT", "T1.county_name", ",", "count", "(", "T2.zip_code", ")", "FROM", "county", "AS", "T1", "JOIN", "zip_code", "AS", "T2", "ON", "T1.county_id", "=", "T2.county_id", "GROUP", "BY", "T1.county_id"],
+    "question_toks": ["Quantos", "CEPs", "cada", "condado", "possui", "?"]
+  },
+  {
+    "db_id": "hospital_1",
+    "query": "SELECT count(*) FROM hospital",
+    "question": "Quantos hospitais estão cadastrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "hospital"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "hospital"],
+    "question_toks": ["Quantos", "hospitais", "estão", "cadastrados", "?"]
+  },
+  {
+    "db_id": "hospital_1",
+    "query": "SELECT name, state FROM hospital WHERE hospital_type = 'Critical Access Hospitals' ORDER BY name",
+    "question": "Quais são os hospitais de acesso crítico em ordem alfabética?",
+    "query_toks": ["SELECT", "name", ",", "state", "FROM", "hospital", "WHERE", "hospital_type", "=", "'Critical Access Hospitals'", "ORDER", "BY", "name"],
+    "query_toks_no_value": ["SELECT", "name", ",", "state", "FROM", "hospital", "WHERE", "hospital_type", "=", "value", "ORDER", "BY", "name"],
+    "question_toks": ["Quais", "são", "os", "hospitais", "de", "acesso", "crítico", "em", "ordem", "alfabética", "?"]
+  },
+  {
+    "db_id": "hospital_1",
+    "query": "SELECT state, count(*) FROM hospital GROUP BY state ORDER BY count(*) DESC LIMIT 10",
+    "question": "Quais estados têm o maior número de hospitais?",
+    "query_toks": ["SELECT", "state", ",", "count", "(", "*", ")", "FROM", "hospital", "GROUP", "BY", "state", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "10"],
+    "query_toks_no_value": ["SELECT", "state", ",", "count", "(", "*", ")", "FROM", "hospital", "GROUP", "BY", "state", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "estados", "têm", "o", "maior", "número", "de", "hospitais", "?"]
+  },
+  {
+    "db_id": "hospital_1",
+    "query": "SELECT T1.name FROM physician AS T1 JOIN affiliated_with AS T2 ON T1.employee_id = T2.physician JOIN department AS T3 ON T2.department = T3.department_id WHERE T3.name = 'General Internal Medicine'",
+    "question": "Quais médicos estão afiliados ao departamento de Medicina Interna Geral?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "physician", "AS", "T1", "JOIN", "affiliated_with", "AS", "T2", "ON", "T1.employee_id", "=", "T2.physician", "JOIN", "department", "AS", "T3", "ON", "T2.department", "=", "T3.department_id", "WHERE", "T3.name", "=", "'General Internal Medicine'"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "physician", "AS", "T1", "JOIN", "affiliated_with", "AS", "T2", "ON", "T1.employee_id", "=", "T2.physician", "JOIN", "department", "AS", "T3", "ON", "T2.department", "=", "T3.department_id", "WHERE", "T3.name", "=", "value"],
+    "question_toks": ["Quais", "médicos", "estão", "afiliados", "ao", "departamento", "de", "Medicina", "Interna", "Geral", "?"]
+  },
+  {
+    "db_id": "hospital_1",
+    "query": "SELECT T1.name, T2.name, T3.start FROM physician AS T1 JOIN patient AS T2 ON T1.employee_id = T2.pcp JOIN appointment AS T3 ON T2.ssn = T3.patient WHERE T3.start LIKE '2008%'",
+    "question": "Quais são os médicos, pacientes e datas das consultas em 2008?",
+    "query_toks": ["SELECT", "T1.name", ",", "T2.name", ",", "T3.start", "FROM", "physician", "AS", "T1", "JOIN", "patient", "AS", "T2", "ON", "T1.employee_id", "=", "T2.pcp", "JOIN", "appointment", "AS", "T3", "ON", "T2.ssn", "=", "T3.patient", "WHERE", "T3.start", "LIKE", "'2008%'"],
+    "query_toks_no_value": ["SELECT", "T1.name", ",", "T2.name", ",", "T3.start", "FROM", "physician", "AS", "T1", "JOIN", "patient", "AS", "T2", "ON", "T1.employee_id", "=", "T2.pcp", "JOIN", "appointment", "AS", "T3", "ON", "T2.ssn", "=", "T3.patient", "WHERE", "T3.start", "LIKE", "value"],
+    "question_toks": ["Quais", "são", "os", "médicos", ",", "pacientes", "e", "datas", "das", "consultas", "em", "2008", "?"]
+  },
+  {
+    "db_id": "academic",
+    "query": "SELECT count(*) FROM author",
+    "question": "Quantos autores estão registrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "author"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "author"],
+    "question_toks": ["Quantos", "autores", "estão", "registrados", "?"]
+  },
+  {
+    "db_id": "academic",
+    "query": "SELECT T1.name, count(T2.paper_id) FROM author AS T1 JOIN writes AS T2 ON T1.aid = T2.aid GROUP BY T1.aid ORDER BY count(T2.paper_id) DESC LIMIT 10",
+    "question": "Quais são os 10 autores com mais publicações?",
+    "query_toks": ["SELECT", "T1.name", ",", "count", "(", "T2.paper_id", ")", "FROM", "author", "AS", "T1", "JOIN", "writes", "AS", "T2", "ON", "T1.aid", "=", "T2.aid", "GROUP", "BY", "T1.aid", "ORDER", "BY", "count", "(", "T2.paper_id", ")", "DESC", "LIMIT", "10"],
+    "query_toks_no_value": ["SELECT", "T1.name", ",", "count", "(", "T2.paper_id", ")", "FROM", "author", "AS", "T1", "JOIN", "writes", "AS", "T2", "ON", "T1.aid", "=", "T2.aid", "GROUP", "BY", "T1.aid", "ORDER", "BY", "count", "(", "T2.paper_id", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "10", "autores", "com", "mais", "publicações", "?"]
+  },
+  {
+    "db_id": "academic",
+    "query": "SELECT T1.name FROM journal AS T1 JOIN publication AS T2 ON T1.jid = T2.jid GROUP BY T1.jid HAVING count(*) > 50",
+    "question": "Quais revistas acadêmicas têm mais de 50 publicações?",
+    "query_toks": ["SELECT", "T1.name", "FROM", "journal", "AS", "T1", "JOIN", "publication", "AS", "T2", "ON", "T1.jid", "=", "T2.jid", "GROUP", "BY", "T1.jid", "HAVING", "count", "(", "*", ")", ">", "50"],
+    "query_toks_no_value": ["SELECT", "T1.name", "FROM", "journal", "AS", "T1", "JOIN", "publication", "AS", "T2", "ON", "T1.jid", "=", "T2.jid", "GROUP", "BY", "T1.jid", "HAVING", "count", "(", "*", ")", ">", "value"],
+    "question_toks": ["Quais", "revistas", "acadêmicas", "têm", "mais", "de", "50", "publicações", "?"]
+  },
+  {
+    "db_id": "academic",
+    "query": "SELECT DISTINCT T1.name FROM author AS T1 JOIN writes AS T2 ON T1.aid = T2.aid JOIN paper AS T3 ON T2.paper_id = T3.paper_id WHERE T3.year > 2010",
+    "question": "Quais autores publicaram artigos após 2010?",
+    "query_toks": ["SELECT", "DISTINCT", "T1.name", "FROM", "author", "AS", "T1", "JOIN", "writes", "AS", "T2", "ON", "T1.aid", "=", "T2.aid", "JOIN", "paper", "AS", "T3", "ON", "T2.paper_id", "=", "T3.paper_id", "WHERE", "T3.year", ">", "2010"],
+    "query_toks_no_value": ["SELECT", "DISTINCT", "T1.name", "FROM", "author", "AS", "T1", "JOIN", "writes", "AS", "T2", "ON", "T1.aid", "=", "T2.aid", "JOIN", "paper", "AS", "T3", "ON", "T2.paper_id", "=", "T3.paper_id", "WHERE", "T3.year", ">", "value"],
+    "question_toks": ["Quais", "autores", "publicaram", "artigos", "após", "2010", "?"]
+  },
+  {
+    "db_id": "soccer_1",
+    "query": "SELECT count(*) FROM player",
+    "question": "Quantos jogadores de futebol estão registrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "player"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "player"],
+    "question_toks": ["Quantos", "jogadores", "de", "futebol", "estão", "registrados", "?"]
+  },
+  {
+    "db_id": "soccer_1",
+    "query": "SELECT player_name, birthday FROM player ORDER BY birthday ASC LIMIT 5",
+    "question": "Quais são os 5 jogadores mais velhos?",
+    "query_toks": ["SELECT", "player_name", ",", "birthday", "FROM", "player", "ORDER", "BY", "birthday", "ASC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "player_name", ",", "birthday", "FROM", "player", "ORDER", "BY", "birthday", "ASC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "5", "jogadores", "mais", "velhos", "?"]
+  },
+  {
+    "db_id": "soccer_1",
+    "query": "SELECT avg(overall_rating) FROM player_attributes WHERE preferred_foot = 'right'",
+    "question": "Qual é a avaliação média dos jogadores que preferem o pé direito?",
+    "query_toks": ["SELECT", "avg", "(", "overall_rating", ")", "FROM", "player_attributes", "WHERE", "preferred_foot", "=", "'right'"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "overall_rating", ")", "FROM", "player_attributes", "WHERE", "preferred_foot", "=", "value"],
+    "question_toks": ["Qual", "é", "a", "avaliação", "média", "dos", "jogadores", "que", "preferem", "o", "pé", "direito", "?"]
+  },
+  {
+    "db_id": "soccer_1",
+    "query": "SELECT T1.team_long_name, count(T2.match_id) FROM team AS T1 JOIN match AS T2 ON T1.team_api_id = T2.home_team_api_id GROUP BY T1.team_api_id ORDER BY count(T2.match_id) DESC LIMIT 5",
+    "question": "Quais times jogaram mais partidas em casa?",
+    "query_toks": ["SELECT", "T1.team_long_name", ",", "count", "(", "T2.match_id", ")", "FROM", "team", "AS", "T1", "JOIN", "match", "AS", "T2", "ON", "T1.team_api_id", "=", "T2.home_team_api_id", "GROUP", "BY", "T1.team_api_id", "ORDER", "BY", "count", "(", "T2.match_id", ")", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "T1.team_long_name", ",", "count", "(", "T2.match_id", ")", "FROM", "team", "AS", "T1", "JOIN", "match", "AS", "T2", "ON", "T1.team_api_id", "=", "T2.home_team_api_id", "GROUP", "BY", "T1.team_api_id", "ORDER", "BY", "count", "(", "T2.match_id", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "times", "jogaram", "mais", "partidas", "em", "casa", "?"]
+  },
+  {
+    "db_id": "soccer_1",
+    "query": "SELECT T1.league_name, avg(T2.home_team_goal + T2.away_team_goal) FROM league AS T1 JOIN match AS T2 ON T1.id = T2.league_id GROUP BY T1.id",
+    "question": "Qual é a média de gols por jogo em cada liga?",
+    "query_toks": ["SELECT", "T1.league_name", ",", "avg", "(", "T2.home_team_goal", "+", "T2.away_team_goal", ")", "FROM", "league", "AS", "T1", "JOIN", "match", "AS", "T2", "ON", "T1.id", "=", "T2.league_id", "GROUP", "BY", "T1.id"],
+    "query_toks_no_value": ["SELECT", "T1.league_name", ",", "avg", "(", "T2.home_team_goal", "+", "T2.away_team_goal", ")", "FROM", "league", "AS", "T1", "JOIN", "match", "AS", "T2", "ON", "T1.id", "=", "T2.league_id", "GROUP", "BY", "T1.id"],
+    "question_toks": ["Qual", "é", "a", "média", "de", "gols", "por", "jogo", "em", "cada", "liga", "?"]
+  },
+  {
+    "db_id": "soccer_1",
+    "query": "SELECT player_name FROM player WHERE height > 190 AND weight < 85",
+    "question": "Quais jogadores têm mais de 190 cm de altura e menos de 85 kg?",
+    "query_toks": ["SELECT", "player_name", "FROM", "player", "WHERE", "height", ">", "190", "AND", "weight", "<", "85"],
+    "query_toks_no_value": ["SELECT", "player_name", "FROM", "player", "WHERE", "height", ">", "value", "AND", "weight", "<", "value"],
+    "question_toks": ["Quais", "jogadores", "têm", "mais", "de", "190", "cm", "de", "altura", "e", "menos", "de", "85", "kg", "?"]
+  },
+  {
+    "db_id": "real_estate_properties",
+    "query": "SELECT count(*) FROM properties",
+    "question": "Quantos imóveis estão cadastrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "properties"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "properties"],
+    "question_toks": ["Quantos", "imóveis", "estão", "cadastrados", "?"]
+  },
+  {
+    "db_id": "real_estate_properties",
+    "query": "SELECT property_type_code, count(*) FROM properties GROUP BY property_type_code ORDER BY count(*) DESC",
+    "question": "Qual é a quantidade de imóveis por tipo?",
+    "query_toks": ["SELECT", "property_type_code", ",", "count", "(", "*", ")", "FROM", "properties", "GROUP", "BY", "property_type_code", "ORDER", "BY", "count", "(", "*", ")", "DESC"],
+    "query_toks_no_value": ["SELECT", "property_type_code", ",", "count", "(", "*", ")", "FROM", "properties", "GROUP", "BY", "property_type_code", "ORDER", "BY", "count", "(", "*", ")", "DESC"],
+    "question_toks": ["Qual", "é", "a", "quantidade", "de", "imóveis", "por", "tipo", "?"]
+  },
+  {
+    "db_id": "real_estate_properties",
+    "query": "SELECT T1.other_property_details FROM properties AS T1 ORDER BY T1.property_id LIMIT 5",
+    "question": "Quais são os detalhes dos 5 primeiros imóveis?",
+    "query_toks": ["SELECT", "T1.other_property_details", "FROM", "properties", "AS", "T1", "ORDER", "BY", "T1.property_id", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "T1.other_property_details", "FROM", "properties", "AS", "T1", "ORDER", "BY", "T1.property_id", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "detalhes", "dos", "5", "primeiros", "imóveis", "?"]
+  },
+  {
+    "db_id": "bike_1",
+    "query": "SELECT count(*) FROM station",
+    "question": "Quantas estações de bicicleta existem?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "station"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "station"],
+    "question_toks": ["Quantas", "estações", "de", "bicicleta", "existem", "?"]
+  },
+  {
+    "db_id": "bike_1",
+    "query": "SELECT name, city FROM station ORDER BY installation_date ASC LIMIT 5",
+    "question": "Quais foram as 5 primeiras estações inauguradas?",
+    "query_toks": ["SELECT", "name", ",", "city", "FROM", "station", "ORDER", "BY", "installation_date", "ASC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "name", ",", "city", "FROM", "station", "ORDER", "BY", "installation_date", "ASC", "LIMIT", "value"],
+    "question_toks": ["Quais", "foram", "as", "5", "primeiras", "estações", "inauguradas", "?"]
+  },
+  {
+    "db_id": "bike_1",
+    "query": "SELECT city, avg(dock_count) FROM station GROUP BY city",
+    "question": "Qual é a média de docas por cidade?",
+    "query_toks": ["SELECT", "city", ",", "avg", "(", "dock_count", ")", "FROM", "station", "GROUP", "BY", "city"],
+    "query_toks_no_value": ["SELECT", "city", ",", "avg", "(", "dock_count", ")", "FROM", "station", "GROUP", "BY", "city"],
+    "question_toks": ["Qual", "é", "a", "média", "de", "docas", "por", "cidade", "?"]
+  },
+  {
+    "db_id": "bike_1",
+    "query": "SELECT T1.name, count(T2.id) FROM station AS T1 JOIN trip AS T2 ON T1.id = T2.start_station_id GROUP BY T1.id ORDER BY count(T2.id) DESC LIMIT 5",
+    "question": "Quais são as 5 estações com mais viagens iniciadas?",
+    "query_toks": ["SELECT", "T1.name", ",", "count", "(", "T2.id", ")", "FROM", "station", "AS", "T1", "JOIN", "trip", "AS", "T2", "ON", "T1.id", "=", "T2.start_station_id", "GROUP", "BY", "T1.id", "ORDER", "BY", "count", "(", "T2.id", ")", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "T1.name", ",", "count", "(", "T2.id", ")", "FROM", "station", "AS", "T1", "JOIN", "trip", "AS", "T2", "ON", "T1.id", "=", "T2.start_station_id", "GROUP", "BY", "T1.id", "ORDER", "BY", "count", "(", "T2.id", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "as", "5", "estações", "com", "mais", "viagens", "iniciadas", "?"]
+  },
+  {
+    "db_id": "bike_1",
+    "query": "SELECT avg(duration) FROM trip WHERE subscription_type = 'Subscriber'",
+    "question": "Qual é a duração média das viagens de assinantes?",
+    "query_toks": ["SELECT", "avg", "(", "duration", ")", "FROM", "trip", "WHERE", "subscription_type", "=", "'Subscriber'"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "duration", ")", "FROM", "trip", "WHERE", "subscription_type", "=", "value"],
+    "question_toks": ["Qual", "é", "a", "duração", "média", "das", "viagens", "de", "assinantes", "?"]
+  },
+  {
+    "db_id": "music_1",
+    "query": "SELECT count(*) FROM artist",
+    "question": "Quantos artistas estão cadastrados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "artist"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "artist"],
+    "question_toks": ["Quantos", "artistas", "estão", "cadastrados", "?"]
+  },
+  {
+    "db_id": "music_1",
+    "query": "SELECT T1.artist_name, count(T2.song_id) FROM artist AS T1 JOIN song AS T2 ON T1.artist_id = T2.artist_id GROUP BY T1.artist_id ORDER BY count(T2.song_id) DESC LIMIT 5",
+    "question": "Quais são os 5 artistas com mais músicas?",
+    "query_toks": ["SELECT", "T1.artist_name", ",", "count", "(", "T2.song_id", ")", "FROM", "artist", "AS", "T1", "JOIN", "song", "AS", "T2", "ON", "T1.artist_id", "=", "T2.artist_id", "GROUP", "BY", "T1.artist_id", "ORDER", "BY", "count", "(", "T2.song_id", ")", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "T1.artist_name", ",", "count", "(", "T2.song_id", ")", "FROM", "artist", "AS", "T1", "JOIN", "song", "AS", "T2", "ON", "T1.artist_id", "=", "T2.artist_id", "GROUP", "BY", "T1.artist_id", "ORDER", "BY", "count", "(", "T2.song_id", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "5", "artistas", "com", "mais", "músicas", "?"]
+  },
+  {
+    "db_id": "music_1",
+    "query": "SELECT DISTINCT genre_id FROM song WHERE downloads > 1000000",
+    "question": "Quais gêneros têm músicas com mais de 1 milhão de downloads?",
+    "query_toks": ["SELECT", "DISTINCT", "genre_id", "FROM", "song", "WHERE", "downloads", ">", "1000000"],
+    "query_toks_no_value": ["SELECT", "DISTINCT", "genre_id", "FROM", "song", "WHERE", "downloads", ">", "value"],
+    "question_toks": ["Quais", "gêneros", "têm", "músicas", "com", "mais", "de", "1", "milhão", "de", "downloads", "?"]
+  },
+  {
+    "db_id": "music_1",
+    "query": "SELECT T1.artist_name FROM artist AS T1 WHERE T1.artist_id NOT IN (SELECT artist_id FROM song WHERE downloads > 500000)",
+    "question": "Quais artistas não têm nenhuma música com mais de 500 mil downloads?",
+    "query_toks": ["SELECT", "T1.artist_name", "FROM", "artist", "AS", "T1", "WHERE", "T1.artist_id", "NOT", "IN", "(", "SELECT", "artist_id", "FROM", "song", "WHERE", "downloads", ">", "500000", ")"],
+    "query_toks_no_value": ["SELECT", "T1.artist_name", "FROM", "artist", "AS", "T1", "WHERE", "T1.artist_id", "NOT", "IN", "(", "SELECT", "artist_id", "FROM", "song", "WHERE", "downloads", ">", "value", ")"],
+    "question_toks": ["Quais", "artistas", "não", "têm", "nenhuma", "música", "com", "mais", "de", "500", "mil", "downloads", "?"]
+  },
+  {
+    "db_id": "wine_1",
+    "query": "SELECT count(*) FROM wine",
+    "question": "Quantos vinhos estão catalogados?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "wine"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "wine"],
+    "question_toks": ["Quantos", "vinhos", "estão", "catalogados", "?"]
+  },
+  {
+    "db_id": "wine_1",
+    "query": "SELECT No, Grape, Winery FROM wine ORDER BY Score DESC LIMIT 10",
+    "question": "Quais são os 10 vinhos com maior pontuação?",
+    "query_toks": ["SELECT", "No", ",", "Grape", ",", "Winery", "FROM", "wine", "ORDER", "BY", "Score", "DESC", "LIMIT", "10"],
+    "query_toks_no_value": ["SELECT", "No", ",", "Grape", ",", "Winery", "FROM", "wine", "ORDER", "BY", "Score", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "10", "vinhos", "com", "maior", "pontuação", "?"]
+  },
+  {
+    "db_id": "wine_1",
+    "query": "SELECT Appelation, count(*) FROM wine GROUP BY Appelation ORDER BY count(*) DESC LIMIT 5",
+    "question": "Quais são as 5 regiões com mais vinhos catalogados?",
+    "query_toks": ["SELECT", "Appelation", ",", "count", "(", "*", ")", "FROM", "wine", "GROUP", "BY", "Appelation", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "Appelation", ",", "count", "(", "*", ")", "FROM", "wine", "GROUP", "BY", "Appelation", "ORDER", "BY", "count", "(", "*", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "as", "5", "regiões", "com", "mais", "vinhos", "catalogados", "?"]
+  },
+  {
+    "db_id": "wine_1",
+    "query": "SELECT avg(Score), min(Score), max(Score) FROM wine WHERE Year > 2010",
+    "question": "Qual é a pontuação média, mínima e máxima dos vinhos produzidos após 2010?",
+    "query_toks": ["SELECT", "avg", "(", "Score", ")", ",", "min", "(", "Score", ")", ",", "max", "(", "Score", ")", "FROM", "wine", "WHERE", "Year", ">", "2010"],
+    "query_toks_no_value": ["SELECT", "avg", "(", "Score", ")", ",", "min", "(", "Score", ")", ",", "max", "(", "Score", ")", "FROM", "wine", "WHERE", "Year", ">", "value"],
+    "question_toks": ["Qual", "é", "a", "pontuação", "média", ",", "mínima", "e", "máxima", "dos", "vinhos", "produzidos", "após", "2010", "?"]
+  },
+  {
+    "db_id": "wine_1",
+    "query": "SELECT DISTINCT Grape FROM wine WHERE Score >= 95",
+    "question": "Quais uvas produzem vinhos com pontuação acima de 95?",
+    "query_toks": ["SELECT", "DISTINCT", "Grape", "FROM", "wine", "WHERE", "Score", ">=", "95"],
+    "query_toks_no_value": ["SELECT", "DISTINCT", "Grape", "FROM", "wine", "WHERE", "Score", ">=", "value"],
+    "question_toks": ["Quais", "uvas", "produzem", "vinhos", "com", "pontuação", "acima", "de", "95", "?"]
+  },
+  {
+    "db_id": "csu_1",
+    "query": "SELECT count(*) FROM campuses",
+    "question": "Quantos campi existem no sistema CSU?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "campuses"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "campuses"],
+    "question_toks": ["Quantos", "campi", "existem", "no", "sistema", "CSU", "?"]
+  },
+  {
+    "db_id": "csu_1",
+    "query": "SELECT campus, county FROM campuses ORDER BY year ASC",
+    "question": "Quais são os campi em ordem de fundação?",
+    "query_toks": ["SELECT", "campus", ",", "county", "FROM", "campuses", "ORDER", "BY", "year", "ASC"],
+    "query_toks_no_value": ["SELECT", "campus", ",", "county", "FROM", "campuses", "ORDER", "BY", "year", "ASC"],
+    "question_toks": ["Quais", "são", "os", "campi", "em", "ordem", "de", "fundação", "?"]
+  },
+  {
+    "db_id": "csu_1",
+    "query": "SELECT T1.campus, sum(T2.totaltextbooks) FROM campuses AS T1 JOIN enrollments AS T2 ON T1.id = T2.campus GROUP BY T1.id ORDER BY sum(T2.totaltextbooks) DESC LIMIT 3",
+    "question": "Quais 3 campi têm o maior gasto total em livros?",
+    "query_toks": ["SELECT", "T1.campus", ",", "sum", "(", "T2.totaltextbooks", ")", "FROM", "campuses", "AS", "T1", "JOIN", "enrollments", "AS", "T2", "ON", "T1.id", "=", "T2.campus", "GROUP", "BY", "T1.id", "ORDER", "BY", "sum", "(", "T2.totaltextbooks", ")", "DESC", "LIMIT", "3"],
+    "query_toks_no_value": ["SELECT", "T1.campus", ",", "sum", "(", "T2.totaltextbooks", ")", "FROM", "campuses", "AS", "T1", "JOIN", "enrollments", "AS", "T2", "ON", "T1.id", "=", "T2.campus", "GROUP", "BY", "T1.id", "ORDER", "BY", "sum", "(", "T2.totaltextbooks", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "3", "campi", "têm", "o", "maior", "gasto", "total", "em", "livros", "?"]
+  },
+  {
+    "db_id": "csu_1",
+    "query": "SELECT T1.campus FROM campuses AS T1 JOIN degrees AS T2 ON T1.id = T2.campus WHERE T2.year = 2000 AND T2.degrees > 5000",
+    "question": "Quais campi conferiram mais de 5000 graus em 2000?",
+    "query_toks": ["SELECT", "T1.campus", "FROM", "campuses", "AS", "T1", "JOIN", "degrees", "AS", "T2", "ON", "T1.id", "=", "T2.campus", "WHERE", "T2.year", "=", "2000", "AND", "T2.degrees", ">", "5000"],
+    "query_toks_no_value": ["SELECT", "T1.campus", "FROM", "campuses", "AS", "T1", "JOIN", "degrees", "AS", "T2", "ON", "T1.id", "=", "T2.campus", "WHERE", "T2.year", "=", "value", "AND", "T2.degrees", ">", "value"],
+    "question_toks": ["Quais", "campi", "conferiram", "mais", "de", "5000", "graus", "em", "2000", "?"]
+  },
+  {
+    "db_id": "store_1",
+    "query": "SELECT count(*) FROM products",
+    "question": "Quantos produtos estão disponíveis?",
+    "query_toks": ["SELECT", "count", "(", "*", ")", "FROM", "products"],
+    "query_toks_no_value": ["SELECT", "count", "(", "*", ")", "FROM", "products"],
+    "question_toks": ["Quantos", "produtos", "estão", "disponíveis", "?"]
+  },
+  {
+    "db_id": "store_1",
+    "query": "SELECT product_name, unit_price FROM products ORDER BY unit_price DESC LIMIT 10",
+    "question": "Quais são os 10 produtos mais caros?",
+    "query_toks": ["SELECT", "product_name", ",", "unit_price", "FROM", "products", "ORDER", "BY", "unit_price", "DESC", "LIMIT", "10"],
+    "query_toks_no_value": ["SELECT", "product_name", ",", "unit_price", "FROM", "products", "ORDER", "BY", "unit_price", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "10", "produtos", "mais", "caros", "?"]
+  },
+  {
+    "db_id": "store_1",
+    "query": "SELECT T2.company_name, count(T1.order_id) FROM orders AS T1 JOIN customers AS T2 ON T1.customer_id = T2.customer_id GROUP BY T2.customer_id ORDER BY count(T1.order_id) DESC LIMIT 5",
+    "question": "Quais são os 5 clientes que mais fizeram pedidos?",
+    "query_toks": ["SELECT", "T2.company_name", ",", "count", "(", "T1.order_id", ")", "FROM", "orders", "AS", "T1", "JOIN", "customers", "AS", "T2", "ON", "T1.customer_id", "=", "T2.customer_id", "GROUP", "BY", "T2.customer_id", "ORDER", "BY", "count", "(", "T1.order_id", ")", "DESC", "LIMIT", "5"],
+    "query_toks_no_value": ["SELECT", "T2.company_name", ",", "count", "(", "T1.order_id", ")", "FROM", "orders", "AS", "T1", "JOIN", "customers", "AS", "T2", "ON", "T1.customer_id", "=", "T2.customer_id", "GROUP", "BY", "T2.customer_id", "ORDER", "BY", "count", "(", "T1.order_id", ")", "DESC", "LIMIT", "value"],
+    "question_toks": ["Quais", "são", "os", "5", "clientes", "que", "mais", "fizeram", "pedidos", "?"]
+  },
+  {
+    "db_id": "store_1",
+    "query": "SELECT T1.category_name, sum(T2.unit_price * T3.quantity) FROM categories AS T1 JOIN products AS T2 ON T1.category_id = T2.category_id JOIN order_details AS T3 ON T2.product_id = T3.product_id GROUP BY T1.category_id ORDER BY sum(T2.unit_price * T3.quantity) DESC",
+    "question": "Qual é o faturamento total por categoria de produto?",
+    "query_toks": ["SELECT", "T1.category_name", ",", "sum", "(", "T2.unit_price", "*", "T3.quantity", ")", "FROM", "categories", "AS", "T1", "JOIN", "products", "AS", "T2", "ON", "T1.category_id", "=", "T2.category_id", "JOIN", "order_details", "AS", "T3", "ON", "T2.product_id", "=", "T3.product_id", "GROUP", "BY", "T1.category_id", "ORDER", "BY", "sum", "(", "T2.unit_price", "*", "T3.quantity", ")", "DESC"],
+    "query_toks_no_value": ["SELECT", "T1.category_name", ",", "sum", "(", "T2.unit_price", "*", "T3.quantity", ")", "FROM", "categories", "AS", "T1", "JOIN", "products", "AS", "T2", "ON", "T1.category_id", "=", "T2.category_id", "JOIN", "order_details", "AS", "T3", "ON", "T2.product_id", "=", "T3.product_id", "GROUP", "BY", "T1.category_id", "ORDER", "BY", "sum", "(", "T2.unit_price", "*", "T3.quantity", ")", "DESC"],
+    "question_toks": ["Qual", "é", "o", "faturamento", "total", "por", "categoria", "de", "produto", "?"]
+  },
+  {
+    "db_id": "store_1",
+    "query": "SELECT product_name FROM products WHERE units_in_stock = 0",
+    "question": "Quais produtos estão sem estoque?",
+    "query_toks": ["SELECT", "product_name", "FROM", "products", "WHERE", "units_in_stock", "=", "0"],
+    "query_toks_no_value": ["SELECT", "product_name", "FROM", "products", "WHERE", "units_in_stock", "=", "value"],
+    "question_toks": ["Quais", "produtos", "estão", "sem", "estoque", "?"]
+  },
+  {
+    "db_id": "store_1",
+    "query": "SELECT T2.company_name, T1.order_date FROM orders AS T1 JOIN customers AS T2 ON T1.customer_id = T2.customer_id WHERE T1.ship_country = 'Brazil' ORDER BY T1.order_date DESC",
+    "question": "Quais pedidos foram enviados para o Brasil?",
+    "query_toks": ["SELECT", "T2.company_name", ",", "T1.order_date", "FROM", "orders", "AS", "T1", "JOIN", "customers", "AS", "T2", "ON", "T1.customer_id", "=", "T2.customer_id", "WHERE", "T1.ship_country", "=", "'Brazil'", "ORDER", "BY", "T1.order_date", "DESC"],
+    "query_toks_no_value": ["SELECT", "T2.company_name", ",", "T1.order_date", "FROM", "orders", "AS", "T1", "JOIN", "customers", "AS", "T2", "ON", "T1.customer_id", "=", "T2.customer_id", "WHERE", "T1.ship_country", "=", "value", "ORDER", "BY", "T1.order_date", "DESC"],
+    "question_toks": ["Quais", "pedidos", "foram", "enviados", "para", "o", "Brasil", "?"]
+  }
+]
