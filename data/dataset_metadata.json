@@ -1,0 +1,33 @@
+{
+  "seed": 42,
+  "criado_em": "2026-04-06T07:26:19.457224",
+  "total_pares": 84202,
+  "spider_pares": 10153,
+  "sql_ctx_pares": 74059,
+  "max_src_len": 60,
+  "max_tgt_len": 100,
+  "splits": {
+    "train": 60309,
+    "test": 11948,
+    "validation": 11945
+  },
+  "idiomas": {
+    "en": 82058,
+    "pt": 2144
+  },
+  "fontes": {
+    "sql-create-context": 74057,
+    "xlangai/spider": 8001,
+    "Boakpe/spider-test-portuguese": 2142,
+    "c4ai": 2
+  },
+  "vocab_src_all_size": 15025,
+  "vocab_src_en_size": 14265,
+  "vocab_src_pt_size": 1387,
+  "vocab_tgt_size": 5424,
+  "datasets_hf": [
+    "xlangai/spider",
+    "Boakpe/spider-test-portuguese",
+    "b-mc2/sql-create-context"
+  ]
+}
