@@ -1,6 +1,6 @@
 {
   "seed": 42,
-  "criado_em": "2026-04-06T07:26:19.457224",
+  "criado_em": "2026-04-07T06:44:58.417457",
   "total_pares": 84202,
   "spider_pares": 10153,
   "sql_ctx_pares": 74059,
@@ -21,8 +21,8 @@
     "Boakpe/spider-test-portuguese": 2142,
     "c4ai": 2
   },
-  "vocab_src_all_size": 15025,
-  "vocab_src_en_size": 14265,
+  "vocab_src_all_size": 15169,
+  "vocab_src_en_size": 14409,
   "vocab_src_pt_size": 1387,
   "vocab_tgt_size": 5424,
   "datasets_hf": [
